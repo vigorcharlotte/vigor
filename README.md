@@ -1,5 +1,5 @@
-# vigor-charlotte
+# vigor-webapp
 
 See the application at:
 
-https://vigor-charlotte.herokuapp.com/
+https://vigor-webapp.herokuapp.com
