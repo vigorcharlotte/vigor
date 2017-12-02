@@ -103,7 +103,12 @@ class Contact extends Component {
           </div>
           <br />
           <div className="card">
-            <iframe title="property address" src="//www.google.com/maps/embed/v1/place?q=216+Iverson+Way,+Charlotte,+NC+28203%20Rd,%20US&zoom=15&key=AIzaSyB0GBwgrG183HMdL5EBK2Pt_jrNCN52izg"></iframe>
+            <iframe
+              width="100%"
+              height="450"
+              frameborder="0" 
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0GBwgrG183HMdL5EBK2Pt_jrNCN52izg&q=Vigor+Charlotte,+NC" allowfullscreen>
+            </iframe>
           </div>
         </section>
         <br />
