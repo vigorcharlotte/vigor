@@ -69,8 +69,20 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 class Login extends React.Component {
   state = {
-    redirectToReferrer: false
+    redirectToReferrer: false,
+    userName: "",
+    userPW: ""
   }
+
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = event.target;
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
+   
+  };
 
   login = () => {
     authUser.authenticate(() => {
