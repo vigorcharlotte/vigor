@@ -30,6 +30,16 @@ module.exports = {
             }
         });
     },
+
+    checkAdminLogin: function(req, res) {
+        //3 5 DRIP DRIP COFFEE drip zip 9
+        if (req.body.login_name === "info@vigorcharlotte.com" && req.body.user_pass === "35DDCdz9") {
+            res.send("success");
+        } else {
+            res.json({ error: "NO" });
+        }
+    },
+
     //check login to verify we have a good user, pass and username match
     checkLogin: function(req, res) {
 

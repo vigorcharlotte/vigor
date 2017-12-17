@@ -7,6 +7,7 @@ import {
   withRouter
 } from 'react-router-dom'
 import Admin from '../Admin'
+import axios from 'axios';
 
 ////////////////////////////////////////////////////////////
 // 1. Click the public page
@@ -75,7 +76,27 @@ class Login extends React.Component {
     authUser.authenticate(() => {
       this.setState({ redirectToReferrer: true })
     })
+    //send username and password to server
+  axios.post("/userSignup/adminCheck", adminLogin)
+  .then(res=>{
+        //reset form data
+        this.setState({
+      userName: "",
+      userPW: ""            
+    });
+    let result=res.data;
+    console.log(result);
+    if (!(result.error ==="NO")){
+      authUser.authenticate(() => {
+        this.setState({ redirectToReferrer: true })
+      })
+    } else {
+      this.setState({ redirectToReferrer: false})
+    }    
+  })
+  .catch(err=>console.log(err));
   }
+  
 
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } }
@@ -90,7 +111,34 @@ class Login extends React.Component {
     return (
       <div>
         <p>You must log in to view the page at {from.pathname}</p>
-        <button onClick={this.login}>Log in</button>
+        <div className="form-group row">
+          {<label htmlFor="input2EmailForm" className="sr-only control-label">Email</label>}
+          <div className="offset-sm-2 col-sm-8">
+              <input type="text" 
+              className="form-control"
+              value={this.state.userName}
+              name="userName"
+              onChange={this.handleInputChange}  
+              id="input2EmailForm" 
+              placeholder="Email" 
+              required="" />
+          </div>
+      <div className="form-group row">
+          {<label htmlFor="input2PasswordForm" className="sr-only control-label">Password</label>}
+          <div className="offset-sm-2 col-sm-8">
+              <input type="password" 
+              className="form-control"
+              value={this.state.userPW}
+              name="userPW"
+              onChange={this.handleInputChange} 
+              id="input2PasswordForm" 
+              placeholder="Password" required="" />
+          </div>
+          <button 
+          disabled = {!this.state.userName || !this.state.userPW}
+          onClick={this.login}>Log in</button>
+      </div>
+      </div>
       </div>
     )
   }
