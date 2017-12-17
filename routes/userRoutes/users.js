@@ -4,7 +4,8 @@ const userController = require("../../controllers/userController");
 
 router.route("/")
     .post(userController.createUser)
-
+router.route("/adminCheck")
+    .post(userController.checkAdminLogin);
 router.route("/userCheck")
     .post(userController.checkLogin);
 router.route("/getUser")
