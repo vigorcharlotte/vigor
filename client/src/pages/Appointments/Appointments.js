@@ -252,7 +252,7 @@ console.log(response);
           <h1 className="float-left text-center text-md-left header">Appointments</h1>
         </Header>
         <section>
-          <div class="card mb-4">
+           {/*<div class="card mb-4">
             <div class="card-block">
             <h3 class="card-title">Make an Appointment</h3>
             <Card style={{
@@ -412,15 +412,15 @@ console.log(response);
             autoHideDuration={10000}
             onRequestClose={() => this.setState({ confirmationSnackbarOpen: false })} />
               
-            
+             */}
         
                 <div class="calendly-inline-widget" id="calendar" data-url="https://calendly.com/vigor">
                 
                 </div>
 
               <div id="calendar"></div>
-            </div>
-          </div>
+            {/* </div>
+          </div> */}
         </section>
       </main>
     </Container>

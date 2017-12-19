@@ -95,6 +95,12 @@ componentWillMount(){
                 <a href="" className="btn btn-primary btn-lg mt-2" aria-expanded= "false" data-toggle="collapse" data-target="#cardClinical" data-parent="#parent">Clinical Bodywork</a>
                 
                 
+                {/* movement analyzing & assessment
+
+                  personal training-- personalized musle testing & rehabilition
+
+                      acute and chronic therapy
+                */}
                     <div className="collapse py-2" id="massageTherapy">
                     <div className="card">
                         <div className="card-block">
