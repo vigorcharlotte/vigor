@@ -252,10 +252,10 @@ console.log(response);
           <h1 className="float-left text-center text-md-left header">Appointments</h1>
         </Header>
         <section>
-           {/*<div class="card mb-4">
+           <div class="card mb-4">
             <div class="card-block">
             <h3 class="card-title">Make an Appointment</h3>
-            <Card style={{
+            {/* <Card style={{
               padding: '10px 10px 25px 10px',
               height: smallScreen ? '100vh' : null
               }}>
@@ -397,30 +397,30 @@ console.log(response);
                 </StepContent>
               </Step>
             </Stepper>
-          </Card>
-          <Dialog
+          </Card> */}
+          {/* <Dialog
             modal={true}
             open={this.state.confirmationModalOpen}
             actions={modalActions}
             title="Confirm your appointment">
             {this.renderAppointmentConfirmation()}
-          </Dialog>
+          </Dialog> */}
 
-          <SnackBar
+          {/* <SnackBar
             open={this.state.confirmationSnackbarOpen}
             message={this.state.confirmationSnackbarMessage || ''}
             autoHideDuration={10000}
-            onRequestClose={() => this.setState({ confirmationSnackbarOpen: false })} />
+            onRequestClose={() => this.setState({ confirmationSnackbarOpen: false })} /> */}
               
-             */}
+            
         
                 <div class="calendly-inline-widget" id="calendar" data-url="https://calendly.com/vigor">
                 
                 </div>
 
               <div id="calendar"></div>
-            {/* </div>
-          </div> */}
+            </div>
+          </div>
         </section>
       </main>
     </Container>
